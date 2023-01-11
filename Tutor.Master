@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Tutor.master.cs" Inherits="LastResortBADPJ.Tutor" %>
+
+<!DOCTYPE html>
+
+
+<html>
+    <head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style2 {
+            width: 100%;
+        }
+        .auto-style3 {
+            margin-top: 2px;
+        }
+        .auto-style4 {
+            width: 707px;
+        }
+        .auto-style5 {
+            width: 54px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <br />
+            <table class="auto-style2">
+                <tr>
+                    <td class="auto-style4">
+            <div class="title">
+                <h1>
+                    <asp:Image ID="Image1" runat="server" CssClass="auto-style3" Height="47px" ImageUrl="~/Images/TuitionLogo.jpg" Width="47px" />
+                    &nbsp;
+                    Coaching with Alumni
+                </h1>
+            </div>                               
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style5">         
+                <asp:ImageButton ID="IB_Cart" runat="server" Height="25px" ImageUrl="~/Images/shoppingcart.jpg" Width="27px"/>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <br />
+            <div class="clear hideSkiplink" style="display: inline-block; height: 46px;">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="My Tuition Listings"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Create Tution Listing"/>
+                    </Items>
+                </asp:Menu>
+
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer">
+            © 2022 Coaching with Alumni
+        </div>
+    </div>
+</form>
+</body>
+</html>

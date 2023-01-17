@@ -74,6 +74,8 @@
     <Content Include="Global.asax" />
     <Content Include="Styles\Site.css" />
     <Content Include="test.aspx" />
+    <Content Include="TutorCreateListing.aspx" />
+    <Content Include="TutorViewMyListing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +117,21 @@
     </Compile>
     <Compile Include="Tutor.Master.designer.cs">
       <DependentUpon>Tutor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TutorCreateListing.aspx.cs">
+      <DependentUpon>TutorCreateListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorCreateListing.aspx.designer.cs">
+      <DependentUpon>TutorCreateListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorListing.cs" />
+    <Compile Include="TutorViewMyListing.aspx.cs">
+      <DependentUpon>TutorViewMyListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorViewMyListing.aspx.designer.cs">
+      <DependentUpon>TutorViewMyListing.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

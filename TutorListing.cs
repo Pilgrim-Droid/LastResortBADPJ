@@ -83,5 +83,20 @@ namespace LastResortBADPJ
             return result;
         }
 
+        public int TuitionLisingDelete(string TutID)
+        {
+            string queryStr = "DELETE FROM Tuition WHERE Tuition_ID=@TutID";
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            cmd.Parameters.AddWithValue("@TutID", TutID);
+
+            conn.Open();
+            int nofRow = 0;
+            nofRow = cmd.ExecuteNonQuery();
+            conn.Close();
+
+            return nofRow;
+        }
+
     }
 }

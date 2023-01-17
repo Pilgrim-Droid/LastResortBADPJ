@@ -5,9 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace LastResortBADPJ
 {
@@ -15,19 +12,34 @@ namespace LastResortBADPJ
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string _connStr = ConfigurationManager.ConnectionStrings["CwADBContext"].ConnectionString;
-            SqlConnection conn = new SqlConnection(_connStr);
-            string queryStr = "select * from [dbo].[Tuition]";
-            SqlCommand cmd = new SqlCommand(queryStr, conn);
-            conn.Open();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.SelectCommand = cmd;
-            DataSet ds = new DataSet();
-            sda.Fill(ds);
-            DataList1.DataSource = ds;
-            DataList1.DataBind();
-            conn.Close();
+
         }
 
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Update")
+            {
+                Response.Redirect("test.aspx");
+            }
+            if (e.CommandName == "Delete")
+            {
+                int result = 0;
+                TutorListing Tut = new TutorListing();
+                string TutID = e.CommandArgument.ToString();
+                result = Tut.TuitionLisingDelete(TutID);
+
+                if (result > 0)
+                {
+                    Response.Write("<script>alert('Deleted Successfully')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Delete Not Successful')</script>");
+                }
+
+                Response.Redirect("TutorViewMyListing.aspx");
+
+            }
+        }
     }
 }

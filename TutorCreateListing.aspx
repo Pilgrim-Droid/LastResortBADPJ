@@ -4,9 +4,6 @@
         .auto-style6 {
             margin-left: 38px;
         }
-        .auto-style7 {
-            margin-left: 39px;
-        }
         .auto-style10 {
             margin-left: 8px;
         }
@@ -20,7 +17,7 @@
     <asp:TextBox ID="Tb_TuitionID" runat="server" CssClass="auto-style6" Height="22px"></asp:TextBox>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Tutor ID"></asp:Label>
-    <asp:TextBox ID="Tb_TutorID" runat="server" CssClass="auto-style7" Height="22px"></asp:TextBox>
+    <asp:Label ID="Lbl_TutorID" runat="server" Text="13"></asp:Label>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Tuition Name"></asp:Label>
     <asp:TextBox ID="Tb_TutitionName" runat="server" CssClass="auto-style10" Height="22px"></asp:TextBox>

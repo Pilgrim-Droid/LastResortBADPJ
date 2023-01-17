@@ -24,7 +24,7 @@ namespace LastResortBADPJ
                 TuitionModule = Ddl_TuitionModule.SelectedItem.Text;
             }
 
-            TutorListing Listing = new TutorListing(Tb_TuitionID.Text, Tb_TutorID.Text, Tb_TutitionName.Text, TuitionModule, decimal.Parse(Tb_TuitionPrice.Text));
+            TutorListing Listing = new TutorListing(Tb_TuitionID.Text, Lbl_TutorID.Text, Tb_TutitionName.Text, TuitionModule, decimal.Parse(Tb_TuitionPrice.Text));
             result = Listing.TuitionListingInsert();
 
             if (result > 0)
@@ -35,6 +35,8 @@ namespace LastResortBADPJ
             {
                 Response.Write("<script>alert('Insert Not Successful')</script>");
             }
+
+            Response.Redirect("TutorViewMyListing.aspx");
         }
     }
 }

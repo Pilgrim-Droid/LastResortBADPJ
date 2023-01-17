@@ -42,13 +42,13 @@ namespace LastResortBADPJ
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Tb_TutorID control.
+        /// Lbl_TutorID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tb_TutorID;
+        protected global::System.Web.UI.WebControls.Label Lbl_TutorID;
 
         /// <summary>
         /// Label3 control.

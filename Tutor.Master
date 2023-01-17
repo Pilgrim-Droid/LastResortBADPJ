@@ -53,8 +53,8 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="My Tuition Listings"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Create Tution Listing"/>
+                        <asp:MenuItem NavigateUrl="~/TutorViewMyListing.aspx" Text="My Tuition Listings"/>
+                        <asp:MenuItem NavigateUrl="~/TutorCreateListing.aspx" Text="Create Tution Listing"/>
                     </Items>
                 </asp:Menu>
 

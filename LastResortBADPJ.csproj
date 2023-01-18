@@ -72,6 +72,8 @@
       <DependentUpon>CwADB.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Images\tuition.png" />
+    <Content Include="Images\user.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="test.aspx" />
     <Content Include="TuitionListingUpdate.aspx" />
@@ -156,7 +158,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -74,6 +74,7 @@
     <Content Include="Global.asax" />
     <Content Include="Styles\Site.css" />
     <Content Include="test.aspx" />
+    <Content Include="TuitionListingUpdate.aspx" />
     <Content Include="TutorCreateListing.aspx" />
     <Content Include="TutorViewMyListing.aspx" />
     <Content Include="Web.config" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TuitionListingUpdate.aspx.cs">
+      <DependentUpon>TuitionListingUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TuitionListingUpdate.aspx.designer.cs">
+      <DependentUpon>TuitionListingUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tutor.Master.cs">
       <DependentUpon>Tutor.Master</DependentUpon>

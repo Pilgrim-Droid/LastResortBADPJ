@@ -19,7 +19,8 @@ namespace LastResortBADPJ
         {
             if (e.CommandName == "Update")
             {
-                Response.Redirect("test.aspx");
+                Session["Tuition_ID"] = e.CommandArgument.ToString();
+                Response.Redirect("TuitionListingUpdate.aspx");
             }
             if (e.CommandName == "Delete")
             {

@@ -83,6 +83,65 @@ namespace LastResortBADPJ
             return result;
         }
 
+        public TutorListing getListing(string TutID)
+        {
+            TutorListing listingDetails = null;
+            string TutorID, name, module, pricex;
+            decimal price;
+
+            string queryStr = "SELECT * FROM Tuition WHERE Tuition_ID=@TutID";
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            cmd.Parameters.AddWithValue("@TutID", TutID);
+
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                TutorID = dr["Tutor_ID"].ToString();
+                name = dr["Tuition_Name"].ToString();
+                module = dr["Tuition_Module"].ToString();
+                pricex = dr["Tuition_Price"].ToString();
+                price = Convert.ToDecimal(pricex);
+
+                listingDetails = new TutorListing(TutID, TutorID, name, module, price);
+            }
+            else
+            {
+                listingDetails = null;
+            }
+
+            conn.Close();
+            dr.Close();
+            dr.Dispose();
+
+            return listingDetails;
+
+        }
+
+        public int TuitionListingUpdate(string TutID, string TutName, string TutMod, decimal TutPrice)
+        {
+            string queryStr = "UPDATE Tuition SET" +
+                " Tuition_Name = @TutName, " +
+                " Tuition_Module = @TutMod, " +
+                " Tuition_Price = @TutPrice " +
+                 "WHERE Tuition_ID = @TutID";
+
+            SqlConnection conn = new SqlConnection(_connStr);
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            cmd.Parameters.AddWithValue("@TutID", TutID);
+            cmd.Parameters.AddWithValue("@TutName", TutName);
+            cmd.Parameters.AddWithValue("@TutMod", TutMod);
+            cmd.Parameters.AddWithValue("@TutPrice", TutPrice);
+
+            conn.Open();
+            int nofRow = 0;
+            nofRow = cmd.ExecuteNonQuery();
+            conn.Close();
+
+            return nofRow;
+        }
+
         public int TuitionLisingDelete(string TutID)
         {
             string queryStr = "DELETE FROM Tuition WHERE Tuition_ID=@TutID";
